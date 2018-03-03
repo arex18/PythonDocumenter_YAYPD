@@ -1,0 +1,33 @@
+{% from 'templates/helpers.html' import print_info_safely %}
+{% extends "templates/index.html" %}
+
+{% block main_content %}
+    <div class="container"  style="width: 100%;">
+    <h3>Information</h3>
+    <p>{{ doc_string or "No description provided" }}</p>
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Parent Package</h3>
+    {% if parent is not none and parent != ''%}
+        <p style="font-weight: bold"><a href="{{ parent_directory_link }}.html">{{ parent }}</a></p>
+    {% else %}
+        <p>No parent package</p>
+    {% endif %}
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Imports</h3>
+    {% call print_info_safely(imports, "No Imports") %}{% endcall %}
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Modules</h3>
+    {% call print_info_safely(modules, "No Modules", directory_link=modules_link) %}{% endcall %}
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Sub-Packages</h3>
+    {% call print_info_safely(sub_packages, "No Sub-Packages", directory_link=sub_packages_link) %}{% endcall %}
+    </div>
+{% endblock %}

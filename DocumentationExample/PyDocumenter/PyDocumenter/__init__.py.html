@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Collapsible sidebar using Bootstrap 3</title>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+        <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1243_RC02/embed_loader.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="../../static/pydocumenter/css/pydoc_style.css">
+   </head>
+   <body>
+      <div class="wrapper">
+         <!-- Sidebar Holder -->
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3><a href="../PyDocumenter.html">PyDocumenter</a></h3>
+    </div>
+
+    <ul class="list-unstyled components">
+        
+        <h4>Packages</h4>
+                <li>
+                    <a href="./.idea.html" class="w3-bar-item w3-button">.idea</a>
+                </li>
+                <li>
+                    <a href="./html_utils.html" class="w3-bar-item w3-button">html_utils</a>
+                </li>
+                <li>
+                    <a href="./pydocumenter_utils.html" class="w3-bar-item w3-button">pydocumenter_utils</a>
+                </li>
+                <li>
+                    <a href="./python_file_parser.html" class="w3-bar-item w3-button">python_file_parser</a>
+                </li>
+                <li>
+                    <a href="./tests.html" class="w3-bar-item w3-button">tests</a>
+                </li>
+        <h4>Modules</h4>
+                <li>
+                    <a href="./main.py.html" class="w3-bar-item w3-button">main.py</a>
+                </li>
+                <li>
+                    <a href="./__init__.py.html" class="w3-bar-item w3-button">__init__.py</a>
+                </li>
+
+    </ul>
+</nav>         <!-- Page Content Holder -->
+         <div id="content">
+            <nav class="navbar navbar-default">
+               <div class="container-fluid">
+                  <div class="navbar-header">
+                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                     <i class="glyphicon glyphicon-align-left"></i>
+                     <span>Toggle Sidebar</span>
+                     </button>
+                  </div>
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                     <h2>__init__.py</h2>
+                  </div>
+               </div>
+            </nav>
+            <div class="module_content">
+    <div class="container"  style="width: 100%;">
+    <h3>Information</h3>
+    <p>No description provided</p>
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Parent Package</h3>
+        <p>No parent package</p>
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Imports</h3>
+    
+        <p>No Imports</p>
+    </div>
+    <div class="line"></div>
+    <div class="classes-display">
+        <div class="container"  style="width: 100%;">
+            <h3>Classes |  <button id="expand-all" class="btn btn-primary">Expand All</button></h3>
+
+<p>No Classes</p>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+        <h3>Functions</h3>
+    
+    <div class="table-responsive">
+       <table class="table table-condensed table-striped">
+          <thead>
+             <tr>
+                <th>Function Name</th>
+                <th>Parameters</th>
+                <th>Docstring</th>
+             </tr>
+          </thead>
+          <tbody>
+          </tbody>
+       </table>
+    </div>
+    </div>
+            </div>
+         </div>
+      </div>
+      <!-- jQuery Custom Scroller CDN -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+             var active = true;
+             var expanded = false;
+
+             $("#sidebar").mCustomScrollbar({
+                 theme: "minimal"
+             });
+
+             $('#sidebarCollapse').on('click', function () {
+                 $('#sidebar, #content').toggleClass('active');
+                 $('.collapse.in').toggleClass('in');
+                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+             });
+
+              $('#expand-all').click(function () {
+                 if (expanded) {
+                     $('.panel-collapse').collapse('hide');
+                     $(this).text('Expand All');
+                 } else {
+                     $('.panel-collapse').collapse('show');
+                     $(this).text('Collapse All');
+                 }
+                 expanded = !expanded;
+              });
+
+              $('#accordion').on('show.bs.collapse', function () {
+                  if (active) $('#accordion .in').collapse('hide');
+              });
+         });
+      </script>
+
+   </body>
+</html>

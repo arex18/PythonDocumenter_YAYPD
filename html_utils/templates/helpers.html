@@ -1,0 +1,55 @@
+{% macro print_info(contents, class_name='bullet-info', directory_link='') %}
+    <div class="{{ class_name }}">
+        <ul>
+        {{ caller() }}
+        {%- for i in contents %}
+            {% if directory_link is not none and directory_link != '' %}
+                <li><a href="{{ directory_link ~ '/' ~ i }}.html">{{ i }}</a></li>
+            {% else %}
+                <li>{{ i }}</li>
+            {% endif %}
+        {%- endfor %}
+        </ul>
+    </div>
+{% endmacro %}
+
+{% macro print_info_safely(contents, message='', class_name='bullet-info', directory_link='') %}
+    {{ caller() }}
+    {% if contents is not none and contents != '' and contents|length > 0 %}
+        {% call print_info(contents, class_name, directory_link) %}{% endcall %}
+    {% else %}
+        <p>{{ message }}</p>
+    {% endif %}
+{% endmacro %}
+
+{% macro generate_functions_table(functions) %}
+    {{ caller() }}
+    <div class="table-responsive">
+       <table class="table table-condensed table-striped">
+          <thead>
+             <tr>
+                <th>Function Name</th>
+                <th>Parameters</th>
+                <th>Docstring</th>
+             </tr>
+          </thead>
+          <tbody>
+             {% for function in functions %}
+             <tr>
+                <td> {{ function.get_name() }}</td>
+                <td>
+                   <ul>
+                      {% for parameter in function.get_parameters() %}
+                      <li>{{ parameter }}</li>
+                      {% endfor %}
+                   </ul>
+                </td>
+                <td>
+                   {{ function.get_docstring() }}
+                </td>
+             </tr>
+             {% endfor %}
+          </tbody>
+       </table>
+    </div>
+{% endmacro %}

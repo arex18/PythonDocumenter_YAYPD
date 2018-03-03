@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Collapsible sidebar using Bootstrap 3</title>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+        <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1243_RC02/embed_loader.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="../../../static/pydocumenter/css/pydoc_style.css">
+   </head>
+   <body>
+      <div class="wrapper">
+         <!-- Sidebar Holder -->
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3><a href="../../PyDocumenter.html">PyDocumenter</a></h3>
+    </div>
+
+    <ul class="list-unstyled components">
+        
+        <h4>Packages</h4>
+                <li>
+                    <a href="../.idea.html" class="w3-bar-item w3-button">.idea</a>
+                </li>
+                <li>
+                    <a href="../html_utils.html" class="w3-bar-item w3-button">html_utils</a>
+                </li>
+                <li>
+                    <a href="../pydocumenter_utils.html" class="w3-bar-item w3-button">pydocumenter_utils</a>
+                </li>
+                <li>
+                    <a href="../python_file_parser.html" class="w3-bar-item w3-button">python_file_parser</a>
+                </li>
+                <li>
+                    <a href="../tests.html" class="w3-bar-item w3-button">tests</a>
+                </li>
+        <h4>Modules</h4>
+                <li>
+                    <a href="../main.py.html" class="w3-bar-item w3-button">main.py</a>
+                </li>
+                <li>
+                    <a href="../__init__.py.html" class="w3-bar-item w3-button">__init__.py</a>
+                </li>
+
+    </ul>
+</nav>         <!-- Page Content Holder -->
+         <div id="content">
+            <nav class="navbar navbar-default">
+               <div class="container-fluid">
+                  <div class="navbar-header">
+                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                     <i class="glyphicon glyphicon-align-left"></i>
+                     <span>Toggle Sidebar</span>
+                     </button>
+                  </div>
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                     <h2>py_html_processor.py</h2>
+                  </div>
+               </div>
+            </nav>
+            <div class="module_content">
+    <div class="container"  style="width: 100%;">
+    <h3>Information</h3>
+    <p>No description provided</p>
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Parent Package</h3>
+        <p><a href="../html_utils.html">html_utils</a></p>
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Imports</h3>
+    
+    <div class="bullet-info">
+        <ul>
+                        <li>jinja2.Environment</li>
+                <li>jinja2.FileSystemLoader</li>
+                <li>os</li>
+                <li>pydocumenter_utils.pydoc_utils.*</li>
+        </ul>
+    </div>
+    </div>
+    <div class="line"></div>
+    <div class="classes-display">
+        <div class="container"  style="width: 100%;">
+            <h3>Classes |  <button id="expand-all" class="btn btn-primary">Expand All</button></h3>
+
+<br/>
+<div class="panel-group" id="accordion">
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h5 class="panel-title">
+            <a data-toggle="collapse" href="#collapse1">HTMLCreator</a>
+         </h5>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+         <div class="panel-body">
+            <div class="container pull-left">
+               <p>This class contains all the processing of packages and modules as well as generation of html files.
+It is where all files are created and documentation is parsed. It recursively walks a library and
+outputs the html documentation in the same format as the python package folder structure.</p>
+    
+    <div class="table-responsive">
+       <table class="table table-condensed table-striped">
+          <thead>
+             <tr>
+                <th>Function Name</th>
+                <th>Parameters</th>
+                <th>Docstring</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr>
+                <td> __init__</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>save_directory : str</li>
+                      <li>library</li>
+                      <li>directory_delimiter</li>
+                      <li>split_char</li>
+                   </ul>
+                </td>
+                <td>
+                   None
+                </td>
+             </tr>
+             <tr>
+                <td> set_library</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>library</li>
+                   </ul>
+                </td>
+                <td>
+                   Setter for library. 
+                </td>
+             </tr>
+             <tr>
+                <td> create_html_doc</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                   </ul>
+                </td>
+                <td>
+                   Main caller after all the Python files are processed by the file parser.
+The folder structure is created and the package is processed. The process is
+recursive, recycling code...
+:return:
+                </td>
+             </tr>
+             <tr>
+                <td> process_module</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>module</li>
+                      <li>save_directory</li>
+                      <li>html_directory_link</li>
+                      <li>package</li>
+                   </ul>
+                </td>
+                <td>
+                   Called during package processing. Processes the module in a similar way by calling
+the correct template, generating the relative links and saving the template in the
+correct folder.
+:param module:
+:param save_directory:
+:param html_directory_link:
+:param package:
+:return: Nothing.
+                </td>
+             </tr>
+             <tr>
+                <td> process_package</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>package</li>
+                      <li>save_directory</li>
+                   </ul>
+                </td>
+                <td>
+                   A recursive function that goes through an entire package and documents its modules.
+All templates are subsequently called from the respective module/package.
+:param package: Package type.
+:param save_directory: Directory for the project to be saved in.
+:return: Nothing.
+                </td>
+             </tr>
+             <tr>
+                <td> _get_package_html_and_parent_link</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>package</li>
+                      <li>main_package_dir</li>
+                   </ul>
+                </td>
+                <td>
+                   Get the relative package directory link and parent link.
+:param package:
+:param main_package_dir:
+:return:
+                </td>
+             </tr>
+             <tr>
+                <td> _get_module_parent_link</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>package</li>
+                   </ul>
+                </td>
+                <td>
+                   Gets the main parent html link.
+:param package:
+:return:
+                </td>
+             </tr>
+             <tr>
+                <td> _get_navigation_link</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>package</li>
+                      <li>module</li>
+                   </ul>
+                </td>
+                <td>
+                   Gets the relative link for the css files and the main home page.
+:param package:
+:param module:
+:return:
+                </td>
+             </tr>
+             <tr>
+                <td> _create_library_navigation_template</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>package</li>
+                      <li>module</li>
+                   </ul>
+                </td>
+                <td>
+                   Gets the links to the package and module and creates the appropriate html file.
+:param package: package type
+:param module: default=None.
+:return: template, main_library_link, css_link
+                </td>
+             </tr>
+             <tr>
+                <td> _save_template_to_html</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>main_directory</li>
+                      <li>file_name</li>
+                      <li>template</li>
+                   </ul>
+                </td>
+                <td>
+                   Saves the created html template to disk. 
+                </td>
+             </tr>
+             <tr>
+                <td> _create_directory</td>
+                <td>
+                   <ul>
+                      <li>self</li>
+                      <li>directory</li>
+                   </ul>
+                </td>
+                <td>
+                   Creates a new directory if it doesnt exist. 
+                </td>
+             </tr>
+          </tbody>
+       </table>
+    </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+        <h3>Functions</h3>
+    
+    <div class="table-responsive">
+       <table class="table table-condensed table-striped">
+          <thead>
+             <tr>
+                <th>Function Name</th>
+                <th>Parameters</th>
+                <th>Docstring</th>
+             </tr>
+          </thead>
+          <tbody>
+          </tbody>
+       </table>
+    </div>
+    </div>
+            </div>
+         </div>
+      </div>
+      <!-- jQuery Custom Scroller CDN -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function () {
+             var active = true;
+             var expanded = false;
+
+             $("#sidebar").mCustomScrollbar({
+                 theme: "minimal"
+             });
+
+             $('#sidebarCollapse').on('click', function () {
+                 $('#sidebar, #content').toggleClass('active');
+                 $('.collapse.in').toggleClass('in');
+                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+             });
+
+              $('#expand-all').click(function () {
+                 if (expanded) {
+                     $('.panel-collapse').collapse('hide');
+                     $(this).text('Expand All');
+                 } else {
+                     $('.panel-collapse').collapse('show');
+                     $(this).text('Collapse All');
+                 }
+                 expanded = !expanded;
+              });
+
+              $('#accordion').on('show.bs.collapse', function () {
+                  if (active) $('#accordion .in').collapse('hide');
+              });
+         });
+      </script>
+
+   </body>
+</html>

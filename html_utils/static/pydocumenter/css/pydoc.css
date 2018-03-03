@@ -1,0 +1,80 @@
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+    text-decoration:none;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.w3-sidebar h3 {
+    text-align: center;
+}
+
+.w3-sidebar {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #222222;
+    color: #AAAAAA;
+}
+
+.w3-button:hover {
+    color: #000!important;
+    background-color: #ccc!important;
+}
+
+.w3-bar-block .w3-bar-item {
+    padding: 0px 16px;
+    font-size: 12px;
+}
+
+.main {
+    margin-left: 0px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.footer {
+    margin-top: 15px;
+    background-color: #343434;
+}
+
+#footer_text {
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+#content {
+ white-space:normal;
+ float: none;
+ margin: 0 auto;
+}
+
+#content h3 {
+	text-align: center;
+}
+
+.container-fluid, .container, .row {
+  margin: 0 auto;
+  width: 100%;
+  background:
+}
+
+h2 {
+    text-align: center;
+}
+
+li {
+    overflow-wrap:break-word;
+}
+
+.module_content {
+    text-align: left;
+}
+
+.col-md-2, .col-md-12 {
+    background-color: #EEEEEE;
+}

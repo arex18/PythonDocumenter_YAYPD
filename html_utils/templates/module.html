@@ -1,0 +1,37 @@
+{% from 'templates/helpers.html' import print_info_safely %}
+{% from 'templates/py_class.html' import print_classes %}
+{% from 'templates/helpers.html' import generate_functions_table %}
+{% extends "templates/index.html" %}
+
+{% block main_content %}
+    <div class="container"  style="width: 100%;">
+    <h3>Information</h3>
+    <p>{{ doc_string or "No description provided" }}</p>
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Parent Package</h3>
+    {% if parent is not none and parent != ''%}
+        <p><a href="{{ parent_directory_link }}.html">{{ parent }}</a></p>
+    {% else %}
+        <p>No parent package</p>
+    {% endif %}
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+    <h3>Imports</h3>
+    {% call print_info_safely(imports, "No Imports") %}{% endcall %}
+    </div>
+    <div class="line"></div>
+    <div class="classes-display">
+        <div class="container"  style="width: 100%;">
+            <h3>Classes |  <button id="expand-all" class="btn btn-primary">Expand All</button></h3>
+            {% call print_classes(classes, message="No Classes") %}{% endcall %}
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="container"  style="width: 100%;">
+        <h3>Functions</h3>
+        {% call generate_functions_table(functions) %}{% endcall %}
+    </div>
+{% endblock %}

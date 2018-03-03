@@ -1,0 +1,35 @@
+{% from 'templates/helpers.html' import generate_functions_table %}
+
+{% macro print_classes(classes, message='') %}
+{{ caller() }}
+{% if classes is not none and classes|length > 0 %}
+<br/>
+{% for class in classes %}
+<div class="panel-group" id="accordion">
+   <div class="panel panel-default">
+      <div class="panel-heading">
+         <h5 class="panel-title">
+            {% set class_panel_name = 'collapse' ~ loop.index %}
+            <a data-toggle="collapse" href="#{{ class_panel_name }}">{{ class.get_name() }}</a>
+         </h5>
+      </div>
+      <div id="{{ class_panel_name }}" class="panel-collapse collapse">
+         <div class="panel-body">
+            <div class="container pull-left">
+               {% set docstring = class.get_docstring() %}
+               {% if docstring is not none and docstring != '' and docstring|length > 0 %}
+               <p>{{ docstring }}</p>
+               {% else %}
+               <p>No docstring defined.</p>
+               {% endif %}
+                {% call generate_functions_table(class.functions) %}{% endcall %}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endfor %}
+{% else %}
+<p>{{ message }}</p>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,16 @@
+{% from 'templates/helpers.html' import print_info_safely %}
+
+{% block content %}
+    {% for files_list, sub_title in navigation_content %}
+        <h4>{{ sub_title }}</h4>
+        {% if files_list is not none and files_list != '' and files_list|length > 0 %}
+            {% for i in files_list %}
+                <li>
+                    <a href="{{ directory_link ~ i }}.html" class="w3-bar-item w3-button">{{ i }}</a>
+                </li>
+            {% endfor %}
+        {% else %}
+            <p>No files to display</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
