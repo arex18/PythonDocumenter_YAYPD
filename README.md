@@ -89,6 +89,11 @@ Classes, functions and their corresponding variables are displayed sequentially.
 
 File types which are not .py will still work, but css styling might not. This is  a TODO.
 
+![mainimage](https://user-images.githubusercontent.com/16338481/36935556-20475544-1ef1-11e8-9fc0-66592e428ac0.PNG)
+![package](https://user-images.githubusercontent.com/16338481/36935563-31eaf8aa-1ef1-11e8-9563-89ac34378a5f.PNG)
+![mainimage2](https://user-images.githubusercontent.com/16338481/36935561-31c2d46a-1ef1-11e8-91cc-2264560bf2cb.PNG)
+![mainimage3](https://user-images.githubusercontent.com/16338481/36935562-31d80a38-1ef1-11e8-9d0d-c1f921183c5a.PNG)
+
 The parser picks up any native function/class/package/variable documentation as well as imports as defined in PEP8. Custom tags can also be specified and picked up: 
 ```
 PACKAGE_DESCRIPTOR = '@PACKAGEDESC'
@@ -100,7 +105,7 @@ DATE_DESCRIPTOR = '@DATE'
 ```
 
 Note that all css files are automatically copied to the output directory.
-## TODOs (Maybe)
+## TODOs
 
 1. Fix styling; styling should be present for all files irrispective of extension.
 2. Add TODO parser and display TODOs or any other user defined tags for every file.
